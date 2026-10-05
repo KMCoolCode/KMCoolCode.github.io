@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yushan Pan — Associate Professor, XJTLU</title>
+<meta name="description" content="Yushan Pan (潘昱杉): Associate Professor and MSc HCI Programme Director at Xi'an Jiaotong–Liverpool University. Multimodal sentiment analysis, machine unlearning, affordance-driven robotics, and HCI.">
+<style>
+:root{
+  --navy:#000000;
+  --navy-2:#3a0710;
+  --gold:#d62839;
+  --gold-soft:#f2aeb6;
+  --ink:#e9e9ea;
+  --muted:#a3a8b2;
+  --bg:#0b0b0c;
+  --card:#171719;
+  --line:#2c2c30;
+  --coral:#ff5d6c;
+  --heading:#f4f4f5;
+  --link:#ff7080;
+  --radius:12px;
+  --shadow:0 2px 10px rgba(0,0,0,.5);
+  --maxw:1080px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI","Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  font-size:16px;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--gold-soft)}
+img{max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---------- Nav ---------- */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(5,5,5,.95);
+  backdrop-filter:blur(6px);
+  border-bottom:3px solid var(--gold);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{color:#fff;font-weight:700;letter-spacing:.04em;font-size:1.02rem}
+.brand span{color:var(--gold-soft)}
+nav ul{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+nav a{
+  color:#dfe5ef;font-size:.9rem;padding:8px 11px;border-radius:6px;display:block;
+}
+nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid #6c7fa0;color:#fff;padding:6px 10px;border-radius:6px;font-size:.85rem;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 70%,#8c1622 100%);
+  color:#fff;padding:72px 0 64px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;
+  border:26px solid rgba(214,40,57,.25);border-radius:50%;
+}
+.hero-grid{display:flex;gap:40px;align-items:center;position:relative;z-index:1}
+.monogram{
+  flex:0 0 132px;width:132px;height:132px;border-radius:50%;
+  object-fit:cover;object-position:center;
+  transform:scale(1.18) translateY(-5%);
+  border:4px solid var(--gold);
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+.hero h1{font-size:2.6rem;line-height:1.15;letter-spacing:.01em}
+.hero .cn{font-size:1.15rem;color:var(--gold-soft);font-weight:600;margin-top:4px}
+.hero .role{margin-top:14px;font-size:1.08rem;color:#e8edf6;max-width:640px}
+.badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.badge{
+  font-size:.78rem;padding:4px 11px;border-radius:999px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(242,174,182,.5);color:#f3d9dd;
+}
+.cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:8px;font-weight:600;font-size:.95rem;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#a6822a;color:#fff}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* ---------- Stats ---------- */
+.stats{background:var(--card);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:26px 18px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat .num{font-size:1.9rem;font-weight:800;color:var(--heading);line-height:1.1}
+.stat .num em{font-style:normal;color:var(--gold)}
+.stat .lab{font-size:.83rem;color:var(--muted);margin-top:4px}
+
+/* ---------- Sections ---------- */
+section.block{padding:64px 0}
+section.block:nth-of-type(even){background:var(--card)}
+.sec-head{margin-bottom:34px}
+.sec-head .kicker{
+  display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:6px;
+}
+.sec-head h2{font-size:1.85rem;color:var(--heading);font-weight:800}
+.sec-head .rule{width:56px;height:3px;background:var(--gold);margin-top:10px;border-radius:2px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.lead-quote{
+  font-size:1.02rem;color:var(--ink);
+}
+.lead-quote p+p{margin-top:14px}
+.factcard{
+  background:var(--navy);color:#eef2f8;border-radius:var(--radius);
+  padding:26px 26px 20px;box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+.factcard h3{color:var(--gold-soft);font-size:1.05rem;margin-bottom:12px;letter-spacing:.03em}
+.factcard ul{list-style:none}
+.factcard li{padding:7px 0 7px 24px;position:relative;font-size:.93rem;border-bottom:1px dashed rgba(255,255,255,.14)}
+.factcard li:last-child{border-bottom:none}
+.factcard li::before{content:"▸";position:absolute;left:2px;color:var(--gold)}
+
+/* Research chips */
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{
+  background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:16px 20px;flex:1 1 220px;box-shadow:var(--shadow);
+}
+.chip h4{color:var(--heading);font-size:1rem;margin-bottom:4px}
+.chip p{font-size:.88rem;color:var(--muted)}
+
+/* Timeline */
+.timeline{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--gold-soft)}
+.tl-item{position:relative;padding:0 0 26px 6px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-36px;top:6px;width:12px;height:12px;border-radius:50%;
+  background:var(--gold);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--gold);
+}
+.tl-date{font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
+.tl-title{font-weight:700;color:var(--heading);font-size:1.03rem}
+.tl-sub{color:var(--muted);font-size:.92rem}
+
+/* Publications */
+.tabs{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}
+.tab-btn{
+  border:1px solid var(--line);background:var(--card);color:var(--muted);
+  padding:9px 20px;border-radius:999px;font-size:.9rem;font-weight:600;cursor:pointer;
+}
+.tab-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.pub{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 22px;margin-bottom:12px;box-shadow:var(--shadow);
+  position:relative;
+}
+.pub .title{font-weight:700;color:var(--heading);font-size:.98rem}
+.pub .meta{font-size:.88rem;color:var(--muted);margin-top:3px}
+.pub .venue{color:var(--ink)}
+.tag{
+  display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:5px;
+  margin-right:6px;vertical-align:middle;
+}
+.tag-q1{background:rgba(96,150,60,.22);color:#a9dd94}
+.tag-q2{background:rgba(214,150,40,.22);color:#f0c27a}
+.tag-a{background:rgba(214,40,57,.25);color:#ff9aa4}
+.tag-b{background:rgba(90,120,200,.22);color:#a9c0f0}
+.tag-c{background:rgba(140,140,150,.25);color:#c2c7d4}
+.star{color:var(--coral);font-weight:700}
+.pub-note{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+/* Grants & awards */
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.minicard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;box-shadow:var(--shadow);
+}
+.minicard h4{font-size:.95rem;color:var(--heading)}
+.minicard .m{font-size:.83rem;color:var(--muted);margin-top:3px}
+.pill{
+  display:inline-block;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:999px;
+  background:rgba(214,40,57,.28);
+  color:#ff9aa4;margin-top:8px;
+}
+.pill.co{background:rgba(90,120,200,.25);color:#a9c0f0}
+ul.awards{list-style:none}
+ul.awards li{
+  padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line);font-size:.94rem;
+}
+ul.awards li::before{content:"★";position:absolute;left:2px;color:var(--gold);font-size:.85rem;top:12px}
+ul.awards li .y{font-weight:700;color:var(--heading);margin-right:6px}
+
+/* Standards / patents */
+.std{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:16px 20px;margin-bottom:12px;box-shadow:var(--shadow)}
+.std h4{color:var(--heading);font-size:.97rem}
+.std .m{font-size:.85rem;color:var(--muted);margin-top:3px}
+.patent-list{columns:2;column-gap:30px}
+.patent-list li{margin-bottom:10px;font-size:.9rem;break-inside:avoid;padding-left:4px}
+.patent-list .y{color:var(--gold);font-weight:700}
+
+/* Teaching / students */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stu{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.stu h4{color:var(--heading);font-size:.96rem;margin-bottom:8px}
+.stu ul{list-style:none;font-size:.88rem;color:var(--muted)}
+.stu li{padding:3px 0 3px 16px;position:relative}
+.stu li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:900}
+.talks li{font-size:.92rem;padding:6px 0 6px 22px;position:relative;list-style:none;border-bottom:1px dashed var(--line)}
+.talks li::before{content:"🎤";position:absolute;left:0;top:6px;font-size:.8rem}
+
+/* Service */
+.svc p+p{margin-top:12px}
+.svc .reviewers{font-size:.9rem;color:var(--muted)}
+
+/* Footer */
+footer{
+  background:var(--navy);color:#cdd6e6;padding:40px 0 30px;margin-top:0;
+  border-top:3px solid var(--gold);
+}
+.foot-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--gold-soft)}
+footer a:hover{color:#fff}
+footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
+
+@media (max-width:860px){
+  .hero h1{font-size:2rem}
+  .hero-grid{flex-direction:column;text-align:center;gap:24px}
+  .badges,.cta{justify-content:center}
+  .about-grid,.cards2{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+  .grid3{grid-template-columns:1fr}
+  .patent-list{columns:1}
+  nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:10px 16px;gap:2px;border-bottom:3px solid var(--gold)}
+  nav ul.open{display:flex}
+  .menu-btn{display:block}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">Yushan Pan <span>潘昱杉</span></div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu ☰</button>
+    <nav>
+      <ul id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#grants">Grants</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#standards">Standards &amp; Patents</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <img class="monogram" src="Yushan.jpg" alt="Portrait of Yushan Pan">
+    <div>
+      <h1>Yushan Pan</h1>
+      <div class="cn">潘昱杉</div>
+      <p class="role">Associate Professor &amp; MSc Human–Computer Interaction Programme Director, Xi'an Jiaotong–Liverpool University. Working on multimodal sentiment analysis, machine unlearning, and affordance-driven robotics.</p>
+      <div class="badges">
+        <span class="badge">Senior Member, IEEE</span>
+        <span class="badge">Senior Member, ACM</span>
+        <span class="badge">Senior Member, CCF</span>
+        <span class="badge">Lifelong Member, CAA</span>
+      </div>
+      <div class="cta">
+        <a class="btn btn-gold" href="https://scholar.xjtlu.edu.cn/en/persons/YushanPan" target="_blank" rel="noopener">XJTLU Profile ↗</a>
+        <a class="btn btn-ghost" href="#publications">Selected Publications</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num">182</div><div class="lab">peer-reviewed papers</div></div>
+    <div class="stat"><div class="num">82</div><div class="lab">SCI Q1/Q2 (TOP) journal articles</div></div>
+    <div class="stat"><div class="num"><em>5</em></div><div class="lab">edited books &amp; 1 chapter</div></div>
+    <div class="stat"><div class="num">¥4.5M</div><div class="lab">running grants as PI</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">About</span>
+      <h2>Professional Highlights</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="lead-quote">
+        <p>I am an Associate Professor at <strong>Xi'an Jiaotong–Liverpool University (XJTLU)</strong>, Suzhou, where I direct the MSc Human–Computer Interaction programme. My research sits at the intersection of <strong>multimodal learning, affective computing, and human–computer interaction</strong>, with current projects on multimodal sentiment analysis, machine unlearning in multimodal data fusion, and affordance-driven robotic systems.</p>
+        <p>My work appears in venues including IEEE Transactions on Affective Computing, IEEE/ACM Transactions on Audio, Speech and Language Processing, ACM CHI, and CSCW. I co-authored two Chinese national standards for AI programming assistants and large-model quality, and hold seven Chinese patents on EEG-based fatigue monitoring, underwater detection, and blockchain crowdsourcing.</p>
+        <p>Prior to XJTLU, I was a tenured Senior Researcher at the <strong>Norwegian University of Science and Technology (NTNU)</strong>, and an industry consultant with PTC Inc. in Greater China and the USA.</p>
+      </div>
+      <aside class="factcard">
+        <h3>At a Glance</h3>
+        <ul>
+          <li>7 CN patents granted/filed since 2024</li>
+          <li>2 Chinese national standards (co-author)</li>
+          <li>Programme Director, MSc HCI (2025–)</li>
+          <li>University Academic Board Member, XJTLU</li>
+          <li>Expert, Yangtze River Delta NICE</li>
+          <li>15+ keynote talks &amp; expert panels</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="block" id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Research</span>
+      <h2>Current Research Areas</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="chips">
+      <div class="chip"><h4>Multimodal Sentiment Analysis</h4><p>Cross-modal interaction, dynamic routing, and fusion for language, audio, and visual evidence in English and Chinese benchmarks.</p></div>
+      <div class="chip"><h4>Machine Unlearning</h4><p>Unlearning in multimodal data fusion for embedded intelligence under data-governance requirements.</p></div>
+      <div class="chip"><h4>Affordance-driven Robotics</h4><p>Multimodal manipulator response and robotic grasping in complex industrial environments.</p></div>
+      <div class="chip"><h4>HCI &amp; CSCW</h4><p>Ethnographic studies of work, VR teleoperation, and collaborative systems in maritime and industrial domains.</p></div>
+      <div class="chip"><h4>Face Anti-Spoofing</h4><p>Ultra-lightweight architectures, anomaly metrics, and multi-semantic GAN models for secure recognition.</p></div>
+      <div class="chip"><h4>Embedded &amp; AIoT Systems</h4><p>Hardware–software co-design, FPGA acceleration, and edge intelligence for perception tasks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE & EDUCATION -->
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Career</span>
+      <h2>Experience &amp; Education</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h3 style="color:var(--heading);margin-bottom:18px;font-size:1.05rem">Work Experience</h3>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">2025 – Present</div><div class="tl-title">Associate Professor</div><div class="tl-sub">Xi'an Jiaotong–Liverpool University, Suzhou, China</div></div>
+          <div class="tl-item"><div class="tl-date">2022 – 2025</div><div class="tl-title">Assistant Professor</div><div class="tl-sub">Xi'an Jiaotong–Liverpool University, Suzhou, China</div></div>
+          <div class="tl-item"><div class="tl-date">2019 – 2021</div><div class="tl-title">Senior Researcher (Tenured)</div><div class="tl-sub">Faculty of Engineering, NTNU, Trondheim, Norway</div></div>
+          <div class="tl-item"><div class="tl-date">2017 – 2019</div><div class="tl-title">Postdoctoral Researcher</div><div class="tl-sub">Faculty of Engineering, NTNU, Trondheim, Norway</div></div>
+          <div class="tl-item"><div class="tl-date">2012 – 2013</div><div class="tl-title">Senior Consultant</div><div class="tl-sub">Parametric Technology Corporation (PTC), Greater China &amp; Boston, USA</div></div>
+          <div class="tl-item"><div class="tl-date">2009 – 2010</div><div class="tl-title">Technical Consultant</div><div class="tl-sub">Parametric Technology Corporation (PTC), Xi'an, Greater China</div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="color:var(--heading);margin-bottom:18px;font-size:1.05rem">Education</h3>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">2021</div><div class="tl-title">Habilitation — Norwegian University Pedagogy</div><div class="tl-sub">Equivalent to FHEA, UK · NTNU, Trondheim</div></div>
+          <div class="tl-item"><div class="tl-date">2018</div><div class="tl-title">Ph.D. in Informatics</div><div class="tl-sub">Department of Computer Science, University of Oslo, Norway</div></div>
+          <div class="tl-item"><div class="tl-date">2012</div><div class="tl-title">M.Sc. Information Systems Engineering</div><div class="tl-sub">Norwegian University of Science and Technology (NTNU), Trondheim</div></div>
+        </div>
+        <h3 style="color:var(--heading);margin:26px 0 14px;font-size:1.05rem">Administration</h3>
+        <ul class="awards">
+          <li><span class="y">2025–</span>University Academic Board Member, XJTLU</li>
+          <li><span class="y">2025–</span>Programme Director, MSc HCI — IET &amp; BCS accreditation</li>
+          <li><span class="y">2026–</span>Member, National Standardization Technical Committee SAC/TC 159</li>
+          <li><span class="y">2026–</span>Review Expert, National AI Application Scenario Innovation Challenge</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="block" id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Scholarship</span>
+      <h2>Selected Publications</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="books">Books</button>
+      <button class="tab-btn" data-tab="journals">Journal Articles</button>
+      <button class="tab-btn" data-tab="conferences">Conference Papers</button>
+    </div>
+
+    <!-- BOOKS -->
+    <div class="tab-pane active" id="books">
+      <div class="pub"><div class="title">Affective Computing and Its Applications for the Caregiving Industry: Theory and Practice</div><div class="meta"><strong>Pan, Y.<span class="star">*</span></strong>, Wang, Y., Xu, Z., &amp; Li, Z. (Accepted). <span class="venue">Liverpool University Press.</span></div></div>
+      <div class="pub"><div class="title">Vision-based Large-Model Technology for Detecting Unsafe Behaviors in Industrial Production</div><div class="meta">Xu, Z., <strong>Pan, Y.</strong>, Zhang, C., Xu, Y., Cao, Y., &amp; Wang, K. (Accepted). <span class="venue">Springer, New York.</span></div></div>
+      <div class="pub"><div class="title">Teleoperation of Mobile Unmanned Robots via Virtual Reality Interfaces</div><div class="meta">Luo, Y., <strong>Pan, Y.<span class="star">*</span></strong>, Wu, D., Liang, H., &amp; Wang, H. (Accepted). <span class="venue">Springer, New York.</span></div></div>
+      <div class="pub"><div class="title">Infrared Targeted Detection and Tracking: Method and Practice</div><div class="meta">Zhu, H., <strong>Pan, Y.<span class="star">*</span></strong>, Deng, X., &amp; Xu, G. (2023). <span class="venue">Springer.</span></div></div>
+      <div class="pub"><div class="title">Fieldwork for Design: Theory and Practice (Chinese translation)</div><div class="meta"><strong>Pan, Y.</strong>, Wang, Y., Luo, Y., &amp; Wu, D. (translators, 2023). Randall, Harper &amp; Rouncefield (authors). <span class="venue">Shandong University Press.</span></div></div>
+      <div class="pub"><div class="title">Book Chapter: Design of Digital Environments for Operations on Vessels</div><div class="meta"><strong>Pan, Y.<span class="star">*</span></strong> (2016). Chapter 8 in <span class="venue">Design of Cooperative Systems, pp. 123–138. Springer.</span></div></div>
+    </div>
+
+    <!-- JOURNALS -->
+    <div class="tab-pane" id="journals">
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">CAMC: A Conflict-Aware Multimodal Clue Model for Sarcasm Recognition</span></div><div class="meta">Li, Q., <strong>Pan, Y.<span class="star">*</span></strong>, Luo, Y., et al. (2027). <span class="venue">IEEE Transactions on Affective Computing</span> · IF 11.3</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">TCaN: Temporal Calibration Network for Dynamic MSA with Adaptive Modality Fusion</span></div><div class="meta">Hu, Y., <strong>Pan, Y.<span class="star">*</span></strong>, He, X., et al. (2027). <span class="venue">IEEE Transactions on Affective Computing</span> · IF 11.3</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">Semantic Purification and Time-Causal Stabilization with Energy-Inspired Arbitration for MSA</span></div><div class="meta">Zhu, M., <strong>Pan, Y.<span class="star">*</span></strong>, Li, Z., et al. (2027). <span class="venue">IEEE Transactions on Affective Computing</span> · IF 11.3</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">Target-specific Attention and Sentiment-guided GNN for Target-oriented MSA</span></div><div class="meta">Liu, S., Lu, T., Zhu, C., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2026). <span class="venue">IEEE Transactions on Affective Computing</span> · IF 9.8</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">QDRF: Quantized and Distilled Robust Fusion for Incomplete Data in MSA</span></div><div class="meta">Hou, J., Cheng, Z., Xing, C., et al., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2026). <span class="venue">Information Sciences</span> · IF 6</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">A Text-guided Cross-hierarchical Fusion and Multi-task Learning Framework for MSA</span></div><div class="meta">Zhu, M., <strong>Pan, Y.<span class="star">*</span></strong>, Xiang, N., et al. (2026). <span class="venue">Neural Networks</span> 202, 108995 · IF 6.3</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">AL-HCL: Active Learning and Hierarchical Contrastive Learning for MSA with Fusion Guidance</span></div><div class="meta">He, X., <strong>Pan, Y.<span class="star">*</span></strong>, Xu, Z., Li, Z., Guo, X., &amp; Yang, C. (2025). <span class="venue">IEEE Transactions on Affective Computing</span> · IF 9.8</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">An Active Learning-based Reinforcement Contextual Information Fusion Model for MSA</span></div><div class="meta">He, X., <strong>Pan, Y.<span class="star">*</span></strong>, Chen, Y., et al. (2025). <span class="venue">IEEE/ACM Transactions on Audio, Speech and Language Processing</span> · IF 6.1</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">Multi-level Correlation Mining Framework with Self-supervised Label Generation for MSA</span></div><div class="meta">Li, Z., Guo, Q., <strong>Pan, Y.<span class="star">*</span></strong>, Ding, W., et al. (2023). <span class="venue">Information Fusion</span> 99 · IF 18.4</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">DSANet: Dynamic and Structure-aware GCN for Sparse and Incomplete Point Cloud Learning</span></div><div class="meta">Li, Y., Baciu, G., Chen, R., Ding, W., Wang, H., <strong>Pan, Y.</strong>, &amp; Li, C. (2024). <span class="venue">IEEE Transactions on Neural Networks and Learning Systems</span> · IF 14.3</div></div>
+      <div class="pub"><div><span class="tag tag-q2">SCI Q2</span><span class="title">Innovative Application of LLM in Prediction of Potential Depression in the Elderly (CHARLS)</span></div><div class="meta">Gao, S., Gao, Y., Su, M., Liu, J., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2026). <span class="venue">Multimedia Systems</span> 32, 42 · IF 3.1</div></div>
+      <div class="pub"><div><span class="tag tag-q1">SCI Q1</span><span class="title">A Multi-view and Multi-granularity Emotional Semantic Interaction Framework for MSA</span></div><div class="meta">Li, Z., Guo, X., Wu, H., et al., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2025). <span class="venue">Neurocomputing</span> 654, 131380 · IF 6.5</div></div>
+      <p class="pub-note"><span class="star">*</span> Corresponding author. A full list of 182 peer-reviewed papers is available on my <a href="https://scholar.xjtlu.edu.cn/en/persons/YushanPan" target="_blank" rel="noopener">XJTLU scholar profile ↗</a>.</p>
+    </div>
+
+    <!-- CONFERENCES -->
+    <div class="tab-pane" id="conferences">
+      <div class="pub"><div><span class="tag tag-a">CCF A</span><span class="title">Intrinsic vs. Extrinsic Programming Challenges in Educational Games</span></div><div class="meta">Chen, B., <strong>Pan, Y.</strong>, Xiang, N., &amp; Huang, S. (2026). <span class="venue">ACM CHI 2026</span>, Article 953.</div></div>
+      <div class="pub"><div><span class="tag tag-a">CCF A</span><span class="title">SEVADE: Self-Evolving Multi-Agent Analysis with Decoupled Evaluation for Hallucination-resistant Sarcasm Detection</span></div><div class="meta">Liu, Z., Chen, Y., Zhou, Z., et al., <strong>Pan, Y.</strong>, &amp; Xu, Z. (2026). <span class="venue">AAAI 2026</span> 40(35), 29573.</div></div>
+      <div class="pub"><div><span class="tag tag-b">CCF B</span><span class="title">Persona Drift Detection in Role-Playing Agents: A Multi-dimensional Consistency Framework</span></div><div class="meta">Gao, Y., Li, Z., Chen, Y., Zhang, C., Xu, Z., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2026). <span class="venue">ICASSP 2026</span>.</div></div>
+      <div class="pub"><div><span class="tag tag-a">CCF A</span><span class="title">“Please Be Nice”: Robot Responses to User Bullying Across Aggression Levels</span></div><div class="meta">Luo, Y., Liu, S., Wu, D., Wang, H., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2024). <span class="venue">ACM CHI 2024</span>, Paper 582.</div></div>
+      <div class="pub"><div><span class="tag tag-a">CCF A</span><span class="title">The Challenges of LLMs in Financial Services</span></div><div class="meta">Xie, L., Jiang, W., Luo, Y., <strong>Pan, Y.<span class="star">*</span></strong>, &amp; Wang, H. (2023). <span class="venue">IJCAI 2023</span>, Macao.</div></div>
+      <div class="pub"><div><span class="tag tag-a">CCF A</span><span class="title">Reflexivity of Account, Professional Vision, and CSCW: Working in the Maritime Domain</span></div><div class="meta"><strong>Pan, Y.</strong> (2021). <span class="venue">ACM CSCW 2021</span>, pp. 1–32.</div></div>
+      <div class="pub"><div><span class="tag tag-b">CCF B</span><span class="title">WalkFormer: Point Cloud Completion via Guided Walks</span></div><div class="meta">Zhang, M., Li, Y., Chen, R., <strong>Pan, Y.<span class="star">*</span></strong>, Wang, J., Wang, Y., &amp; Xiang, R. (2024). <span class="venue">WACV 2024</span>, pp. 3281–3290.</div></div>
+      <div class="pub"><div><span class="tag tag-c">CCF C</span><span class="title">Teleoperation of a Fast Omnidirectional UGV via a VR Interface <span style="color:var(--coral)">(Best Paper Award)</span></span></div><div class="meta">Luo, Y., Wang, J., <strong>Pan, Y.</strong>, Luo, S., Irani, P., &amp; Liang, H. N. (2022). <span class="venue">ACM VRCAI 2022</span>.</div></div>
+      <div class="pub"><div><span class="tag tag-a">CCF A</span><span class="title">Enhancing Environmental Protection Through HCI: Coastal Litter Cleanup in Norway</span></div><div class="meta">Hellevik, C. C., Wu, D., &amp; <strong>Pan, Y.<span class="star">*</span></strong> (2025). <span class="venue">CHI EA 2025</span>, Article 670.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GRANTS -->
+<section class="block" id="grants">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Funding</span>
+      <h2>Research Projects</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="cards2">
+      <div class="minicard"><h4>Suzhou Intelligent Manufacturing Global AI Data Collaborative Industry Innovation Consortium</h4><div class="m">2026–2028 · Governmental project</div><span class="pill">PI · ¥2,000,000</span></div>
+      <div class="minicard"><h4>Multimodal Manipulator Response Technology in Affordance-enabled Environments</h4><div class="m">2026–2029 · Collaborative project</div><span class="pill">PI · ¥500,000</span></div>
+      <div class="minicard"><h4>CAAE: Context-Aware and Attention-Enhanced MSA for Intelligent HMI</h4><div class="m">2024–2027 · PGRS</div><span class="pill">PI · ¥290,000</span></div>
+      <div class="minicard"><h4>Machine Unlearning in Multimodal Data Fusion for Embedded Intelligence</h4><div class="m">2025–2030 · PGRS</div><span class="pill">PI · ¥290,000</span></div>
+      <div class="minicard"><h4>Jiangsu Province “Double Innovation” Doctoral Talent Program</h4><div class="m">2023–2025 · Governmental talent program</div><span class="pill">PI · ¥150,000</span></div>
+      <div class="minicard"><h4>Modeling, Optimization &amp; Digital Twin of Mixed Traffic Flow</h4><div class="m">2024–2027 · NSFC General Program</div><span class="pill co">Co-PI · ¥510,000</span></div>
+      <div class="minicard"><h4>Interpretable System for Intelligent Multimodal Medical Diagnosis</h4><div class="m">2024–2027 · Collaborative project</div><span class="pill co">Co-PI · ¥500,000</span></div>
+      <div class="minicard"><h4>Cloud-based Intelligent Control for Flexible Manufacturing of High-end Equipment</h4><div class="m">2024–2027 · Collaborative project</div><span class="pill co">Co-PI · ¥500,000</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="block" id="awards">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Recognition</span>
+      <h2>Selected Awards</h2>
+      <div class="rule"></div>
+    </div>
+    <ul class="awards">
+      <li><span class="y">2026</span>First Prize in Natural Science, Suzhou Association for Artificial Intelligence &amp; Suzhou Association for Science and Technology (municipal level)</li>
+      <li><span class="y">2025</span>Merit Award, 18th China International Software Design &amp; Application Competition, Sichuan Province (provincial level)</li>
+      <li><span class="y">2024</span>Jiangsu Provincial “Double-Innovation” Doctoral Talent (provincial level)</li>
+      <li><span class="y">2024</span>Second Prize, Children's Story Commonsense Reasoning &amp; Moral Understanding Evaluation, CCL 2024 (national NLP competition)</li>
+      <li><span class="y">2024</span>Best SURF Supervisor, XJTLU</li>
+      <li><span class="y">2023</span>Bronze Award, 8th China “Internet+” University Student Innovation &amp; Entrepreneurship Competition, Ministry of Education (national)</li>
+      <li><span class="y">2023</span>Excellence Award, 1st Air Force Creative Challenge, PLA Air Force (national)</li>
+      <li><span class="y">2023</span>Best Paper Award, IEEE International Conference on Cyber, Physical and Social Computing (CPSCom)</li>
+      <li><span class="y">2023 / 2022</span>Recognised Associate Chair, ACM CHI and ACM CSCW (CCF A)</li>
+      <li><span class="y">2019</span>ACM Gary Marsden Award — annual global early-career HCI honour</li>
+      <li><span class="y">2016</span>Chinese Government Award for Outstanding Students Abroad, China Scholarship Council (national)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- STANDARDS & PATENTS -->
+<section class="block" id="standards">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Innovation</span>
+      <h2>National Standards &amp; Patents</h2>
+      <div class="rule"></div>
+    </div>
+    <h3 style="color:var(--heading);margin-bottom:14px;font-size:1.05rem">Chinese National Standards (Co-author)</h3>
+    <div class="std">
+      <h4><a href="https://www.ndls.org.cn/standard/detail/584e04e0e0b436c4b8c0814fc0c2c380" target="_blank" rel="noopener">Technical Requirements and Test Specifications for All-in-One Programming Assistants</a></h4>
+      <div class="m">辅助编程一体机技术要求及测试规范 · 2025 · MIIT / National Library for Standards</div>
+    </div>
+    <div class="std">
+      <h4><a href="https://ndls.org.cn/standard/detail/f9489ef201b63e0f973730415acd9e7b" target="_blank" rel="noopener">T/CIE 257-2024 Large Model System Quality Requirements — Part 1: Text Type</a></h4>
+      <div class="m">大模型系统质量要求 第一部分 文本类型 · 2025 · MIIT / National Library for Standards</div>
+    </div>
+    <h3 style="color:var(--heading);margin:30px 0 14px;font-size:1.05rem">Patents</h3>
+    <ul class="patent-list">
+      <li><span class="y">2026</span> Cross-modal Spatiotemporal Conflict-based Short-video Sarcasm Detection</li>
+      <li><span class="y">2026</span> Text-anchored Heterogeneity-preserving Fusion for MSA</li>
+      <li><span class="y">2024</span> Underwater Target Detection System and Method Based on Data Analysis <strong>(Granted)</strong></li>
+      <li><span class="y">2024</span> EEG-based Fatigue Monitoring Device and Method</li>
+      <li><span class="y">2024</span> Novel EEG-based Fatigue Monitoring Device and Method</li>
+      <li><span class="y">2024</span> Machine-vision-based Intelligent Underwater Path-planning System</li>
+      <li><span class="y">2024</span> IoT-based Dynamic Optimal Equipment Maintenance System</li>
+      <li><span class="y">2024</span> Rapid 3D Modeling for Virtual Simulation of Human Anatomy</li>
+      <li><span class="y">2024</span> Blockchain Smart-contract Crowdsourcing Task Method</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEACHING & TALKS -->
+<section class="block" id="teaching">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Education</span>
+      <h2>Teaching &amp; Invited Talks</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h3 style="color:var(--heading);margin-bottom:14px;font-size:1.05rem">Courses</h3>
+        <ul class="awards">
+          <li><span class="y">2022–</span>Human–Robot Interaction · Master's · Module Leader, XJTLU</li>
+          <li><span class="y">2022–</span>Introduction to Object-Oriented Programming in Java · Bachelor's · Module Leader</li>
+          <li><span class="y">2023</span>Multiagent Systems · Bachelor's · Co-teach, XJTLU</li>
+          <li><span class="y">2017–21</span>Human-centred Computing · Ph.D. level · Coordinator, NTNU</li>
+          <li><span class="y">2019–21</span>Computer-Supported Cooperative Work · Coordinator, NTNU</li>
+        </ul>
+        <p style="font-size:.88rem;color:var(--muted);margin-top:12px">Guest lectures at University of Oslo, Osaka University, Xidian University, Xi'an Jiaotong University, SJTU, Google Research, and China Mobile Research Institute, among others.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--heading);margin-bottom:14px;font-size:1.05rem">Selected Talks &amp; Panels</h3>
+        <ul class="talks">
+          <li>2025 · Media interview: AI Development and the Indispensability of Critical Thinking — <a href="https://www.thepaper.cn/newsDetail_forward_30132253" target="_blank" rel="noopener">The Paper (澎湃新闻)</a></li>
+          <li>2024 · Emotional Human–Robot Interaction, Xidian University Guangzhou</li>
+          <li>2024 · Affective Computing Applications in HCI, UM-SJTU</li>
+          <li>2023 · Emotion Computing and Smart Cultural Tourism, Xinhua News Agency</li>
+          <li>2023 · Wearable Fatigue Detection Based on SSVEP-BCI, CCF Embedded Systems Conference</li>
+          <li>2022 · Characterizing HCI Research in China, Xidian University</li>
+          <li>2020 · Human–Machine Cohabitation, DigitalWorld Congress, Valencia</li>
+          <li>2019 · Information Support for Dynamic Positioning Operations, University of Oslo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENTS -->
+<section class="block" id="students">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Mentorship</span>
+      <h2>Students</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid3">
+      <div class="stu">
+        <h4>Current Ph.D. Students</h4>
+        <ul>
+          <li>Ziyue Zhang (primary, 2027)</li>
+          <li>Yifan Gao (primary, 2027)</li>
+          <li>Qiuyu Li (primary, 2027)</li>
+          <li>Xiaosong Hu (primary, 2030)</li>
+          <li>Minghui Zhu (co-supervisor, 2030)</li>
+          <li>Wanli Bai (co-supervisor, 2030)</li>
+        </ul>
+      </div>
+      <div class="stu">
+        <h4>BSc / MSc Placements</h4>
+        <ul>
+          <li>30+ BSc/MSc graduates supervised</li>
+          <li>Placements at UCL, Manchester, Wisconsin–Madison, HKU</li>
+          <li>Industry: Tencent, Bosch, CETC, Shandong Port Group</li>
+          <li>Designed dual-pathway MSc HCI curriculum (CS / non-CS)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="block" id="service">
+  <div class="wrap svc">
+    <div class="sec-head">
+      <span class="kicker">Community</span>
+      <h2>Academic Service</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="chips">
+      <div class="chip"><h4>Conference Leadership</h4><p>Associate Chair for ACM CHI, CSCW, DIS, and ICMI; Vice Chair (2025–27) and Treasurer (2024–25) of the Xi'an ACM SIGCHI Chapter.</p></div>
+      <div class="chip"><h4>Committee Service</h4><p>ACM SIGCHI CARES Committee (2022–2026); CDGDC national thesis sampling examiner; CCF and CAA professional committee member.</p></div>
+      <div class="chip"><h4>National Innovation Expertise</h4><p>Specially-invited expert for major projects at the Yangtze River Delta National Center of Technology Innovation (NICE).</p></div>
+    </div>
+    <p class="reviewers" style="margin-top:22px">Reviewer for <strong>Nature Communications</strong>, IEEE TPAMI, IEEE TNNLS, IEEE Transactions on Affective Computing, IEEE/ACM TASLP, IEEE Transactions on Image Processing, IEEE Transactions on Industrial Informatics, IEEE Transactions on Multimedia, and many other journals, plus ACM CHI, CSCW, DIS, ICMI, and HRI conferences. Book reviewer for Cambridge University Press, CRC Press, and Routledge.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div style="color:#fff;font-weight:700;font-size:1.05rem">Yushan Pan · 潘昱杉</div>
+      <div class="small">Associate Professor · MSc HCI Programme Director<br>Xi'an Jiaotong–Liverpool University, Suzhou, China</div>
+    </div>
+    <div>
+      <a href="https://scholar.xjtlu.edu.cn/en/persons/YushanPan" target="_blank" rel="noopener">XJTLU Scholar Profile ↗</a>
+      <div class="small">Last updated: October 2026</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Publication tabs
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+// Mobile menu
+var menuBtn=document.getElementById('menuBtn');
+var navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+</script>
+</body>
+</html>
