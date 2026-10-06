@@ -149,6 +149,25 @@ section.block:nth-of-type(even){background:var(--card)}
 .tl-sub{color:var(--muted);font-size:.92rem}
 .tl-sub .u-gold,.u-gold{background:linear-gradient(90deg,#f4e6bd,#ddc285 45%,#b99c60);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
+/* Role cards */
+.role-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+.role-card{
+  background:var(--navy);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 24px;box-shadow:var(--shadow);
+}
+.role-card h3{
+  font-size:.98rem;color:var(--gold-soft);letter-spacing:.03em;
+  margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line);
+}
+.role-card ul{list-style:none}
+.role-card li{
+  padding:8px 0 8px 20px;position:relative;font-size:.88rem;
+  border-bottom:1px dashed rgba(255,255,255,.1);
+}
+.role-card li:last-child{border-bottom:none}
+.role-card li::before{content:"▸";position:absolute;left:2px;color:var(--gold)}
+.role-card .y{color:var(--gold);font-weight:700;margin-right:6px;font-size:.82rem}
+
 /* Publications */
 .tabs{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}
 .tab-btn{
@@ -236,6 +255,7 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
   .hero-grid{flex-direction:column;text-align:center;gap:24px}
   .badges,.cta{justify-content:center}
   .about-grid,.cards2{grid-template-columns:1fr}
+  .role-cards{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(2){border-right:none}
   .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
@@ -378,8 +398,12 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
           <div class="tl-item"><div class="tl-date">2018</div><div class="tl-title">Ph.D. in Informatics</div><div class="tl-sub">Department of Informatics, <span class="u-gold">University of Oslo</span>, Norway</div></div>
           <div class="tl-item"><div class="tl-date">2012</div><div class="tl-title">M.Sc. Information Systems Engineering</div><div class="tl-sub"><span class="u-gold">Norwegian University of Science and Technology (NTNU)</span>, Trondheim</div></div>
         </div>
-        <h3 style="color:var(--heading);margin:26px 0 14px;font-size:1.05rem">Administration &amp; Expert Roles</h3>
-        <ul class="awards">
+      </div>
+    </div>
+    <div class="role-cards">
+      <div class="role-card">
+        <h3>Administration &amp; Expert Roles</h3>
+        <ul>
           <li><span class="y">2022–</span>Nationwide Expert for Random Inspection &amp; Evaluation of Undergraduate &amp; Postgraduate Graduation Theses, CDGDC (Ministry of Education)</li>
           <li><span class="y">2025–</span>University Academic Board Member, XJTLU</li>
           <li><span class="y">2025–</span>Programme Director, MSc HCI — IET &amp; BCS accreditation</li>
@@ -388,8 +412,10 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
           <li><span class="y">Jan 2026</span>Review Expert, National AI Application Scenario Innovation Challenge</li>
           <li><span class="y">2026–</span>Review Expert, Yangtze River Delta International AI Application Scenario Innovation Competition (CAAI)</li>
         </ul>
-        <h3 style="color:var(--heading);margin:26px 0 14px;font-size:1.05rem">Professional Committee Work</h3>
-        <ul class="awards">
+      </div>
+      <div class="role-card">
+        <h3>Professional Committee Work</h3>
+        <ul>
           <li><span class="y">2026–29</span>Associate Professor, Ruijin–XJTLU Intelligent Medicine Institute, Shanghai Jiao Tong University</li>
           <li><span class="y">2023–26</span>Adjunct Faculty &amp; External Censor, NTNU &amp; University of Oslo</li>
           <li><span class="y">2023–</span>Visiting Researcher, China Mobile Research Institute</li>
