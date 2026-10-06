@@ -113,6 +113,12 @@ nav a:hover{background:rgba(255,255,255,.1);color:#fff}
 .btn:hover{transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:#fff}
 .btn-gold:hover{background:#6e2430;color:#fff}
+.cta-mail{
+  align-self:center;font-size:.86rem;color:var(--gold-soft);
+  border-bottom:1px solid transparent;transition:color .2s,border-color .2s;
+}
+.cta-mail::before{content:"\2709  ";}
+.cta-mail:hover{color:#fff;border-bottom-color:rgba(255,255,255,.5)}
 .btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
 
@@ -353,6 +359,7 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
       <div class="cta">
         <a class="btn btn-gold" href="https://scholar.xjtlu.edu.cn/en/persons/YushanPan" target="_blank" rel="noopener">XJTLU Profile ↗</a>
         <a class="btn btn-ghost" href="#publications">Selected Publications</a>
+        <a class="cta-mail js-mail" href="#" data-u="yushan.pan" data-d="liverpool.ac.uk">yushan.pan [at] liverpool.ac.uk</a>
       </div>
     </div>
   </div>
@@ -717,7 +724,7 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
     </div>
     <div>
       <div style="color:#fff;font-weight:700;font-size:.95rem;margin-bottom:4px">Contact</div>
-      <a id="contactMail" href="#" data-u="yushan.pan" data-d="liverpool.ac.uk">yushan.pan [at] liverpool.ac.uk</a>
+      <a id="contactMail" class="js-mail" href="#" data-u="yushan.pan" data-d="liverpool.ac.uk">yushan.pan [at] liverpool.ac.uk</a>
     </div>
     <div>
       <a href="https://scholar.xjtlu.edu.cn/en/persons/YushanPan" target="_blank" rel="noopener">XJTLU Scholar Profile ↗</a>
@@ -754,12 +761,11 @@ toTop.addEventListener('click',function(){
 });
 
 // Contact email (assembled at runtime)
-(function(){
-  var m=document.getElementById('contactMail');
+document.querySelectorAll('.js-mail').forEach(function(m){
   var addr=m.dataset.u+'@'+m.dataset.d;
   m.href='mailto:'+addr;
   m.textContent=addr;
-})();
+});
 </script>
 </body>
 </html>
