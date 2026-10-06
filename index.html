@@ -716,6 +716,10 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
       <div class="small">Associate Professor · MSc HCI Programme Director<br>Xi'an Jiaotong–Liverpool University, Suzhou, China</div>
     </div>
     <div>
+      <div style="color:#fff;font-weight:700;font-size:.95rem;margin-bottom:4px">Contact</div>
+      <a id="contactMail" href="#" data-u="yushan.pan" data-d="liverpool.ac.uk">yushan.pan [at] liverpool.ac.uk</a>
+    </div>
+    <div>
       <a href="https://scholar.xjtlu.edu.cn/en/persons/YushanPan" target="_blank" rel="noopener">XJTLU Scholar Profile ↗</a>
       <div class="small">Last updated: October 2026</div>
     </div>
@@ -748,6 +752,14 @@ window.addEventListener('scroll',function(){
 toTop.addEventListener('click',function(){
   window.scrollTo({top:0,behavior:'smooth'});
 });
+
+// Contact email (assembled at runtime)
+(function(){
+  var m=document.getElementById('contactMail');
+  var addr=m.dataset.u+'@'+m.dataset.d;
+  m.href='mailto:'+addr;
+  m.textContent=addr;
+})();
 </script>
 </body>
 </html>
