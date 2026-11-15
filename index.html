@@ -135,7 +135,7 @@ nav a:hover{background:rgba(255,255,255,.1);color:#fff}
 
 /* ---------- Stats ---------- */
 .stats{background:var(--card);border-bottom:1px solid var(--line)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
 .stat{padding:26px 18px;text-align:center;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
 .stat .num{font-size:1.9rem;font-weight:700;color:var(--heading);line-height:1.1;font-family:"Playfair Display",Georgia,serif}
@@ -332,8 +332,9 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
   .about-grid,.cards2,.stu-grid2{grid-template-columns:1fr}
   .role-cards{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+  .stat:nth-child(2),.stat:nth-child(4){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2),.stat:nth-child(3),.stat:nth-child(4){border-bottom:1px solid var(--line)}
+  .stat:nth-child(5){grid-column:1/-1;border-right:none}
   .grid3{grid-template-columns:1fr}
   .patent-list{columns:1}
 }
@@ -392,6 +393,7 @@ footer .small{font-size:.83rem;margin-top:8px;color:#93a1b8}
     <div class="stat"><div class="num">86</div><div class="lab">CAS Q1/Q2 (TOP) journal articles</div></div>
     <div class="stat"><div class="num"><em>5</em></div><div class="lab">edited books &amp; 1 chapter</div></div>
     <div class="stat"><div class="num">¥4.5M</div><div class="lab">running grants as PI</div></div>
+    <div class="stat"><div class="num">40+</div><div class="lab">BSc &amp; MSc graduates supervised</div></div>
   </div>
 </div>
 
